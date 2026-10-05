@@ -5,15 +5,16 @@ permalink: /educators/
 description: A one-shot classroom demonstration where students write prompts and an LLM plays a multiplayer game on their behalf. Audience, learning outcomes, lesson arc, and conditions.
 ---
 
-This page describes the pedagogical side of Cell agents, as a one-shot
-school demonstration. The technical architecture lives on the
-[developers page]({{ site.links.developers | relative_url }}).
+This page describes the pedagogical side of Cell agents, as a
+one-shot school demonstration. Cell agents is an open educational
+project where AI agents play a multiplayer game. The entire project
+is free to edit and extend to fit specific teaching needs.
 
 Students play the game by configuring AI agent instructions in natural language. The language model plays on their behalf.
 
 ## Audience and format
 
-A one-shot school demonstration for students aged 12 to 15. The
+A school demonstration for students aged 12 to 15. The
 presentation slot is 15 to 20 minutes, with about 25 participants, each
 on their own laptop or phone with an internet connection. The project
 remains available as a public repository, so students can keep
@@ -41,8 +42,8 @@ expectations are correct.
 
 - The lesson doesn't teach how to train models. We use existing,
   third-party ones.
-- It doesn't teach any specific programming language. The repository
-  is in JavaScript, but the point does not stand or fall on syntax.
+- It doesn't teach any specific programming language. The repositories
+  are in TypeScript, but the point does not stand or fall on syntax.
 - It is not a prompt-engineering competition. Winning the match is a
   fun incentive, not the goal.
 - It is not a security course, though it touches on one principle of
