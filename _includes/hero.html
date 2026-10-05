@@ -4,10 +4,11 @@
 <p class="tagline">{{ site.tagline_line2 }}</p>
 <nav class="actions" aria-label="Primary">
     <a class="btn btn-primary" href="{{ site.links.play }}">Play</a>
-    <a class="btn btn-secondary" href="{{ site.links.github }}">GitHub</a>
-    <a class="btn btn-secondary" href="{{ site.links.contact }}">Contact</a>
+    <a class="btn btn-primary" href="{{ site.links.playViaAi | relative_url }}">Play via AI</a>
+    <a class="btn btn-primary" href="{{ site.links.about | relative_url }}">About</a>
 </nav>
 <nav class="actions actions-secondary" aria-label="Sections">
-    <a href="{{ site.links.developers | relative_url }}">For developers →</a>
-    <a href="{{ site.links.classroom | relative_url }}">For educators →</a>
+    <a class="btn btn-secondary" href="{{ site.links.developers | relative_url }}">For developers</a>
+    <a class="btn btn-secondary" href="{{ site.links.educators | relative_url }}">For educators</a>
+    <a class="btn btn-secondary" href="{{ site.links.github }}">GitHub</a>
 </nav>

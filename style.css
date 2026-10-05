@@ -87,12 +87,7 @@ a:focus-visible {
 }
 
 .actions-secondary {
-    margin-top: 0.25rem;
-    font-size: 0.95rem;
-}
-
-.actions-secondary a {
-    color: var(--muted);
+    margin-top: 0;
 }
 
 .btn {

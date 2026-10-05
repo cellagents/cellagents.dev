@@ -22,10 +22,9 @@
                 <span class="brand-name">{{ site.title }}</span>
             </a>
             <nav class="site-nav" aria-label="Primary">
-                <a href="{{ site.links.developers | relative_url }}">Developers</a>
-                <a href="{{ site.links.classroom | relative_url }}">Classroom</a>
                 <a href="{{ site.links.play }}">Play</a>
-                <a href="{{ site.links.github }}">GitHub</a>
+                <a href="{{ site.links.playViaAi | relative_url }}">Play via AI</a>
+                <a href="{{ site.links.about | relative_url }}">About</a>
             </nav>
         </header>
         <main class="page">
@@ -37,10 +36,10 @@
     {% endif %}
     <footer class="site-footer">
         <a href="{{ site.links.home | relative_url }}">Home</a> ·
-        <a href="{{ site.links.developers | relative_url }}">Developers</a> ·
-        <a href="{{ site.links.classroom | relative_url }}">Classroom</a> ·
-        <a href="{{ site.links.github }}">GitHub</a> ·
-        <a href="{{ site.links.contact }}">Contact</a>
+        <a href="{{ site.links.about | relative_url }}">About</a> ·
+        <a href="{{ site.links.developers | relative_url }}">For developers</a> ·
+        <a href="{{ site.links.educators | relative_url }}">For educators</a> ·
+        <a href="{{ site.links.github }}">GitHub</a>
     </footer>
 </body>
 </html>

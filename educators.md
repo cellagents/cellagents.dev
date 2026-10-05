@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Classroom demo project
-permalink: /classroom/
+title: Educators
+permalink: /educators/
 description: A one-shot classroom demonstration where students write prompts and an LLM plays a multiplayer game on their behalf. Audience, learning outcomes, lesson arc, and conditions.
 ---
 
@@ -9,17 +9,16 @@ This page describes the pedagogical side of Cell agents, as a one-shot
 school demonstration. The technical architecture lives on the
 [developers page]({{ site.links.developers | relative_url }}).
 
-Students play a by altering AI agent instructions in natural language. The language model plays on their behalf.
+Students play the game by configuring AI agent instructions in natural language. The language model plays on their behalf.
 
 ## Audience and format
 
 A one-shot school demonstration for students aged 12 to 15. The
 presentation slot is 15 to 20 minutes, with about 25 participants, each
-on their own laptop or phone with an internet connection. After the
-lesson the project remains available as a public repository, so
-students can keep playing at home, modify the code and deepen their
-understanding. The deployed game environment also keeps running, so
-anyone can try their own AI from home.
+on their own laptop or phone with an internet connection. The project
+remains available as a public repository, so students can keep
+playing at home, modify the code and deepen their understanding.
+The deployed game environment remains running on cellagents.dev.
 
 ## The main idea
 

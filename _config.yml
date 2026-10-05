@@ -11,7 +11,9 @@ links:
   github: https://github.com/cellagents
   contact: mailto:info@cellagents.dev
   developers: /developers/
-  classroom: /classroom/
+  about: /about/
+  educators: /educators/
+  playViaAi: /play-via-ai/
   home: /
 
 # No plugins beyond what GitHub Pages ships; no third-party gems.
@@ -25,5 +27,5 @@ exclude:
   - vendor
   - .jekyll-cache
 
-# Permalinks: `/developers/`, `/classroom/` etc. - friendlier than `.html`.
+# Permalinks: `/developers/`, `/educators/` etc. - friendlier than `.html`.
 permalink: pretty

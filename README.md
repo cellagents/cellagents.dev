@@ -7,7 +7,9 @@ Pages, autodeploys from `main`.
 
 - `/` - general-public landing (hero + buttons)
 - `/developers/` - repository map and architecture diagrams
-- `/classroom/` - lesson plan and learning outcomes
+- `/educators/` - lesson plan and learning outcomes
+- `/about/` - project summary and contact
+- `/play-via-ai/` - how to connect external MCP clients
 
 ## Files
 
@@ -15,7 +17,7 @@ Pages, autodeploys from `main`.
 - `_layouts/default.html` - the one layout, with a `layout_mode: hero`
   switch used by the homepage
 - `_includes/hero.html`, `_includes/mermaid.html` - partials
-- `index.md`, `developers.md`, `classroom.md` - page content
+- `index.md`, `about.md`, `developers.md`, `educators.md`, `play-via-ai.md` - page content
 - `style.css` - shared styles
 - `assets/logo.svg`, `assets/logo.png`
 - `CNAME` - apex domain `cellagents.dev`
