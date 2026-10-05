@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title and page.title != site.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/logo.svg' | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ '/assets/logo.png' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+</head>
+<body>
+    {% if page.layout_mode == "hero" %}
+        <main class="stage">
+            {% include hero.html %}
+            {{ content }}
+        </main>
+    {% else %}
+        <header class="site-header">
+            <a class="brand" href="{{ site.links.home | relative_url }}">
+                <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" class="brand-logo" width="32" height="32">
+                <span class="brand-name">{{ site.title }}</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="{{ site.links.developers | relative_url }}">Developers</a>
+                <a href="{{ site.links.education | relative_url }}">Education</a>
+                <a href="{{ site.links.play }}">Play</a>
+                <a href="{{ site.links.github }}">GitHub</a>
+            </nav>
+        </header>
+        <main class="page">
+            <article class="prose">
+                {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
+                {{ content }}
+            </article>
+        </main>
+    {% endif %}
+    <footer class="site-footer">
+        <a href="{{ site.links.home | relative_url }}">Home</a> ·
+        <a href="{{ site.links.developers | relative_url }}">Developers</a> ·
+        <a href="{{ site.links.education | relative_url }}">Education</a> ·
+        <a href="{{ site.links.github }}">GitHub</a> ·
+        <a href="{{ site.links.contact }}">Contact</a>
+    </footer>
+</body>
+</html>

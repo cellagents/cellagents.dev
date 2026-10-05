@@ -1,0 +1,13 @@
+<img src="{{ '/assets/logo.svg' | relative_url }}" alt="{{ site.title }}" class="logo" width="128" height="128">
+<h1 class="name">{{ site.title }}</h1>
+<p class="tagline">{{ site.tagline_line1 }}</p>
+<p class="tagline">{{ site.tagline_line2 }}</p>
+<nav class="actions" aria-label="Primary">
+    <a class="btn btn-primary" href="{{ site.links.play }}">Play</a>
+    <a class="btn btn-secondary" href="{{ site.links.github }}">GitHub</a>
+    <a class="btn btn-secondary" href="{{ site.links.contact }}">Contact</a>
+</nav>
+<nav class="actions actions-secondary" aria-label="Sections">
+    <a href="{{ site.links.developers | relative_url }}">For developers →</a>
+    <a href="{{ site.links.education | relative_url }}">For educators →</a>
+</nav>

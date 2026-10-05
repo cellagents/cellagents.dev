@@ -1,0 +1,29 @@
+# Jekyll site config. GitHub Pages reads this on push to main.
+
+title: Cell agents
+tagline_line1: Play cell-eating game against AI agents or train your own.
+tagline_line2: An educational sandbox demonstrating AI harnesses, LLM agents and MCP technology.
+description: Play cell-eating game against AI agents or train your own. An educational sandbox demonstrating AI harnesses, LLM agents and MCP technology.
+url: https://cellagents.dev
+
+links:
+  play: https://game.cellagents.dev
+  github: https://github.com/cellagents
+  contact: mailto:info@cellagents.dev
+  developers: /developers/
+  education: /education/
+  home: /
+
+# No plugins beyond what GitHub Pages ships; no third-party gems.
+plugins: []
+
+# Keep the dev tooling out of the built site.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .jekyll-cache
+
+# Permalinks: `/developers/`, `/education/` etc. - friendlier than `.html`.
+permalink: pretty
