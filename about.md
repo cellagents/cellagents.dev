@@ -33,8 +33,11 @@ other inquiry, reach us at [info@cellagents.dev]({{ site.links.contact }}).
 
 ## Sponsors
 
-Development and public runtime of Cell agents are supported by **Triton IT**, a Czech software company.
+Development and public runtime of Cell agents are supported by
+[**Triton IT**](https://tritonit.cz), a Czech software company.
 
 <p class="sponsor">
-  <img src="{{ '/assets/tritonit-logo.svg' | relative_url }}" alt="Triton IT" class="sponsor-logo">
+  <a href="https://tritonit.cz">
+    <img src="{{ '/assets/tritonit-logo.svg' | relative_url }}" alt="Triton IT" class="sponsor-logo">
+  </a>
 </p>
