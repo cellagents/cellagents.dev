@@ -131,13 +131,16 @@ a:focus-visible {
 /* ------------- Content pages (developers, education) ------------- */
 
 .site-header {
+    border-bottom: 1px solid var(--border);
+    background: transparent;
+}
+
+.site-header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
     padding: 1rem 1.25rem;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
     flex-wrap: wrap;
     max-width: var(--max-prose);
     width: 100%;

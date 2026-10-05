@@ -17,15 +17,17 @@
         </main>
     {% else %}
         <header class="site-header">
-            <a class="brand" href="{{ site.links.home | relative_url }}">
-                <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" class="brand-logo" width="32" height="32">
-                <span class="brand-name">{{ site.title }}</span>
-            </a>
-            <nav class="site-nav" aria-label="Primary">
-                <a href="{{ site.links.play }}">Play</a>
-                <a href="{{ site.links.playViaAi | relative_url }}">Play via AI</a>
-                <a href="{{ site.links.about | relative_url }}">About</a>
-            </nav>
+            <div class="site-header-inner">
+                <a class="brand" href="{{ site.links.home | relative_url }}">
+                    <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" class="brand-logo" width="32" height="32">
+                    <span class="brand-name">{{ site.title }}</span>
+                </a>
+                <nav class="site-nav" aria-label="Primary">
+                    <a href="{{ site.links.play }}">Play</a>
+                    <a href="{{ site.links.playViaAi | relative_url }}">Play via AI</a>
+                    <a href="{{ site.links.about | relative_url }}">About</a>
+                </nav>
+            </div>
         </header>
         <main class="page">
             <article class="prose">
