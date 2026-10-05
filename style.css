@@ -279,7 +279,7 @@ a:focus-visible {
 
 .sponsor-logo {
     display: inline-block;
-    max-width: min(280px, 60%);
+    max-width: min(168px, 36%);
     height: auto;
 }
 
