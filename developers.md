@@ -5,30 +5,30 @@ permalink: /developers/
 description: Repository map, architecture diagrams and entry points for developers working on cell agents.
 ---
 
-A small, open, educational stack where LLM agents play a multiplayer
+An open, educational project where AI agents play a multiplayer
 cell-eating game (an [agar.io](https://agar.io) descendant) against
-each other and against human players. The system is split into a few
-small services so each piece is readable on its own, and the four
-protocols in play (Socket.IO, MCP over HTTP, an internal WebSocket,
-OpenAI-compatible HTTP) stay visible.
+each other and against human players.
+
+The system is split into several components. Each is usable on its
+own or wired together as a single stack.
 
 ## Repositories
 
 | Repo | Role |
 |------|------|
 | [`cells-game`](https://github.com/cellagents/cells-game) | TypeScript game server + web client. Default player view, spectator, follow-cam, admin console and panel embed all live here. |
-| [`cells-mcp`](https://github.com/cellagents/cells-mcp) | MCP server. The only path an AI agent uses to influence the game. |
-| [`harness`](https://github.com/cellagents/harness) | Reference "honest harness" that runs the agent loop server-side and hosts the student panel. |
-| [`game.cellagents.dev`](https://github.com/cellagents/game.cellagents.dev) | Compose stack and Ansible deploy for the public reference deployment. |
-| [`starter-stack`](https://github.com/cellagents/starter-stack) | Localhost jump-start: one `docker compose up` builds and runs the full stack on a laptop. |
+| [`cells-mcp`](https://github.com/cellagents/cells-mcp) | MCP server. The only path an AI agent uses to influence the game. Backward-compatible with upstream [`owenashurst/agar.io-clone`](https://github.com/owenashurst/agar.io-clone). |
+| [`harness`](https://github.com/cellagents/harness) | A demo harness that runs the agent loop server-side and hosts the user control panel. |
+| [`game.cellagents.dev`](https://github.com/cellagents/game.cellagents.dev) | Official public deployment. |
+| [`starter-stack`](https://github.com/cellagents/starter-stack) | Private localhost deployment jump-start: one `docker compose up` builds and runs the full stack locally. |
 | [`cellagents.dev`](https://github.com/cellagents/cellagents.dev) | This website. Jekyll on GitHub Pages. |
-| [`.github`](https://github.com/cellagents/.github) | Org profile stub. |
+| [`.github`](https://github.com/cellagents/.github) | GitHub Organization profile. |
 
 `cells-game` is a direct descendant of
-[`owenashurst/agar.io-clone`](https://github.com/owenashurst/agar.io-clone);
-it was rewritten in TypeScript and absorbed what used to be a separate
-`thin-client` repo, so the game server and every browser-side view it
-serves now live together.
+[`owenashurst/agar.io-clone`](https://github.com/owenashurst/agar.io-clone),
+rewritten in TypeScript and extended with bug fixes, a custom admin
+dashboard and thin client modes so it integrates cleanly with the rest
+of the stack.
 
 ## How users reach the system
 
@@ -61,12 +61,10 @@ flowchart TD
     Admin --> Game
 </div>
 
-Read top-down as "path of user influence." Every AI goes through an
-MCP server; the MCP server is the only AI entry point into the world.
-Humans play through the default web client. Observers and admins use
-the spectator, follow-cam and admin surfaces that the game itself
-serves. The game server is the single source of truth; AI and human
-players are indistinguishable to it.
+Every AI goes through an MCP server; the MCP server is the only AI entry point into the world.
+Humans play through the default web client. Observers and admins use the spectator,
+follow-cam and admin surfaces that the game itself serves. The game server
+is the single source of truth; AI and human players are indistinguishable to it.
 
 ## How the components fit together
 
@@ -118,8 +116,7 @@ Key relationships:
   credentials.
 
 Each edge speaks a different protocol (Socket.IO, MCP over HTTP, an
-internal WebSocket, OpenAI-compatible HTTP). That mix is deliberate: it
-is also what the course teaches.
+internal WebSocket, OpenAI-compatible HTTP).
 
 ## Where to start
 
