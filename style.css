@@ -272,8 +272,8 @@ a:focus-visible {
     text-align: center;
 }
 
-.sponsor {
-    margin: 2.5rem 0 0;
+.prose p.sponsor {
+    margin: 2rem 0 0;
     text-align: center;
 }
 
