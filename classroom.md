@@ -1,17 +1,15 @@
 ---
 layout: default
-title: Education
-permalink: /education/
+title: Classroom demo project
+permalink: /classroom/
 description: A one-shot classroom demonstration where students write prompts and an LLM plays a multiplayer game on their behalf. Audience, learning outcomes, lesson arc, and conditions.
 ---
 
-Students play a game. Not by mouse or finger, though. They write
-instructions in natural language, and a language model plays their cell
-on their behalf.
-
-This page describes the pedagogical side of cell agents, as a one-shot
+This page describes the pedagogical side of Cell agents, as a one-shot
 school demonstration. The technical architecture lives on the
 [developers page]({{ site.links.developers | relative_url }}).
+
+Students play a by altering AI agent instructions in natural language. The language model plays on their behalf.
 
 ## Audience and format
 
@@ -25,7 +23,7 @@ anyone can try their own AI from home.
 
 ## The main idea
 
-Open-source game `agar.io-clone` is a clone of the popular browser
+This project forks an open-source game `agar.io-clone`, a clone of the popular browser
 game `agar.io`, where a cell moves around a map, collects food, splits
 and devours smaller players. Whoever survives and grows the most wins.
 

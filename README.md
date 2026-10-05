@@ -7,7 +7,7 @@ Pages, autodeploys from `main`.
 
 - `/` - general-public landing (hero + buttons)
 - `/developers/` - repository map and architecture diagrams
-- `/education/` - lesson plan and learning outcomes
+- `/classroom/` - lesson plan and learning outcomes
 
 ## Files
 
@@ -15,7 +15,7 @@ Pages, autodeploys from `main`.
 - `_layouts/default.html` - the one layout, with a `layout_mode: hero`
   switch used by the homepage
 - `_includes/hero.html`, `_includes/mermaid.html` - partials
-- `index.md`, `developers.md`, `education.md` - page content
+- `index.md`, `developers.md`, `classroom.md` - page content
 - `style.css` - shared styles
 - `assets/logo.svg`, `assets/logo.png`
 - `CNAME` - apex domain `cellagents.dev`

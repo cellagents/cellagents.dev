@@ -138,4 +138,4 @@ is also what the course teaches.
   it ships the full compose stack and an Ansible playbook.
 - **Understand the design** → each repo has a README; the component
   diagram above is the shortest tour. The pedagogical side is on the
-  [education page]({{ site.links.education | relative_url }}).
+  [classroom page]({{ site.links.classroom | relative_url }}).
