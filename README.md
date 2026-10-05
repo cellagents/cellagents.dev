@@ -1,7 +1,9 @@
 # cellagents.dev
 
-Public landing page for the Cell agents project. Jekyll on GitHub
-Pages, autodeploys from `main`.
+Public website for the Cell agents project at
+[`cellagents.dev`](https://cellagents.dev), Jekyll on GitHub Pages,
+autodeploys from `main`. Covers landing, developer, educator and
+MCP-connection pages.
 
 ## Pages
 

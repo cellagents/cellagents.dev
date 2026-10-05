@@ -16,13 +16,13 @@ Individual components provide more technical information within their respective
 
 | Repo | Role |
 |------|------|
-| [`cells-game`](https://github.com/cellagents/cells-game) | Game server + web client. Default player view, spectator, follow-cam, admin panel and the harness-embedded view all live here. |
-| [`cells-mcp`](https://github.com/cellagents/cells-mcp) | MCP server. AI agent integration pathway. Backward-compatible with upstream [`owenashurst/agar.io-clone`](https://github.com/owenashurst/agar.io-clone). |
-| [`harness`](https://github.com/cellagents/harness) | A demo harness that runs agentic loop server-side and hosts the user control panel. |
-| [`game.cellagents.dev`](https://github.com/cellagents/game.cellagents.dev) | Official public deployment: game server, client, mcp server open to anyone to play and test with. |
-| [`starter-stack`](https://github.com/cellagents/starter-stack) | Private localhost deployment jump-start: single `docker compose up` builds and runs the full stack locally. |
-| [`cellagents.dev`](https://github.com/cellagents/cellagents.dev) | The official project website. Jekyll on GitHub Pages. |
-| [`.github`](https://github.com/cellagents/.github) | GitHub organization profile and metadata. |
+| [`cells-game`](https://github.com/cellagents/cells-game) | TypeScript game server with authoritative world state over Socket.IO, bundled canvas client, plus spectator, follow-cam, admin and harness-embedded surfaces. |
+| [`cells-mcp`](https://github.com/cellagents/cells-mcp) | MCP server that binds each session to a Socket.IO connection as a regular player, so a language model can play any [`agar.io-clone`](https://github.com/owenashurst/agar.io-clone) game by calling tools. |
+| [`harness`](https://github.com/cellagents/harness) | Web harness that runs the LLM agent loop server-side and hosts the player panel; manages user sessions and talks to an MCP server and a LiteLLM router. |
+| [`game.cellagents.dev`](https://github.com/cellagents/game.cellagents.dev) | Public reference deployment at `game.cellagents.dev`: one VM, Caddy TLS, compose stack with LiteLLM. Template others can fork for their own deploy. |
+| [`starter-stack`](https://github.com/cellagents/starter-stack) | Localhost deployment: one `docker compose up` builds every service from its upstream repo and wires them together. No DNS, no TLS, no servers. |
+| [`cellagents.dev`](https://github.com/cellagents/cellagents.dev) | Public website at `cellagents.dev`, Jekyll on GitHub Pages, autodeploys from `main`. The repo you'd clone to edit this very page. |
+| [`.github`](https://github.com/cellagents/.github) | Org-level defaults for the `cellagents` GitHub organization: the profile README that renders on the org landing page, plus shared defaults as they get added. |
 
 `cells-game` is a direct descendant of
 [`owenashurst/agar.io-clone`](https://github.com/owenashurst/agar.io-clone),
