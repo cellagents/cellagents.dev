@@ -80,9 +80,9 @@ might remember.
    tools does something emerge that behaves like an agent. In class
    students use a very limited harness, but they realize that at home
    they can run a much stronger one.
-5. **Latency and cost are not abstract.** In ordinary chat you don't
-   notice the wait. But when a game cell's survival depends on the
-   answer, time and model choice become tangible strategic
+5. **Latency is not abstract.** In ordinary chat you don't notice
+   the wait. But when a game cell's survival depends on the answer,
+   response time and model choice become tangible strategic
    decisions.
 6. **Perception shaping: how a model sees the world.** The model
    receives only what `observe()` hands it. Students notice that
@@ -137,16 +137,15 @@ by which the AI plays. Two points are stressed:
 ### Middle 10 minutes: the match
 
 Students open the link, enter a name, receive a pre-filled access key
-to the model, write their own strategy, pick a decision speed (faster
-= more expensive in the in-game currency) and a model (stronger
-models cost more). The match begins.
+to the model, write their own strategy, pick a decision speed and a
+model. The match begins.
 
 During the match the teacher narrates what is happening on the
 projector. Shows the live tool-call log of selected players. Comments
 like: *"Notice that Alice let her agent think only once every five
-seconds, to save. Right now Peter, who paid for faster decisions,
-ate her."* The commentary turns the abstract principle into concrete
-events on screen.
+seconds, to keep moves predictable. Right now Peter, whose agent
+reacted faster, ate her."* The commentary turns the abstract
+principle into concrete events on screen.
 
 Early phases are free: after death a player respawns smaller. Then
 **sudden death** kicks in, where the next death is final. From a full
@@ -174,11 +173,10 @@ The teacher highlights the key points:
   internet connection.
 - The game server, MCP server and model gateway are run by the teacher
   or lesson organizer. Students install nothing.
-- The cost of model calls during the lesson is paid by the operator,
-  with a fixed spending cap.
+- Model usage during the lesson is covered by the operator.
 - After the lesson the server keeps running so students can play at
-  home. If credit runs out, the repository and instructions for
-  running the stack independently remain available.
+  home. The repository and instructions for running the stack
+  independently remain available.
 
 ## Extensions, if time remains or as homework
 
