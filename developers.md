@@ -19,11 +19,10 @@ Individual components provide more technical information within their respective
 
 | Repo | Role |
 |------|------|
-| [`cells-game`](https://github.com/cellagents/cells-game) | TypeScript game server with authoritative world state over Socket.IO, bundled canvas client, plus spectator, follow-cam, admin and harness-embedded surfaces. |
+| [`cells-game`](https://github.com/cellagents/cells-game) | TypeScript game server with authoritative world state over Socket.IO, bundled canvas client, plus spectator, follow-cam and admin surfaces. |
 | [`game-protocol`](https://github.com/cellagents/game-protocol) | Zod-first TypeScript package that defines the wire contract between `cells-game` and any subscriber (bots, MCP server, future clients). Protocol version `1.0`. |
 | [`cells-mcp`](https://github.com/cellagents/cells-mcp) | MCP server that binds each session to a Socket.IO connection as a regular player, so a language model can play any [`agar.io-clone`](https://github.com/owenashurst/agar.io-clone) game by calling tools. |
 | [`game-bots`](https://github.com/cellagents/game-bots) | Headless Node.js process that connects N deterministic bots to one or more `cells-game` servers and tunes each bot's behaviour from three personality knobs (aggressiveness, split willingness, cowardice). |
-| [`harness`](https://github.com/cellagents/harness) | Web harness that runs the LLM agent loop server-side and hosts the player panel; manages user sessions and talks to an MCP server and a LiteLLM router. |
 | [`starter-stack`](https://github.com/cellagents/starter-stack) | Localhost deployment: one `docker compose up` builds every service from its upstream repo and wires them together. No DNS, no TLS, no servers. |
 | [`cellagents.dev`](https://github.com/cellagents/cellagents.dev) | Public website at `cellagents.dev`, Jekyll on GitHub Pages, autodeploys from `main`. The repo you'd clone to edit this very page. |
 | [`.github`](https://github.com/cellagents/.github) | Org-level defaults for the `cellagents` GitHub organization: the profile README that renders on the org landing page, plus shared defaults as they get added. |
@@ -62,23 +61,19 @@ flowchart TD
     classDef comp fill:#f6f8fa,stroke:#57606a,color:#1f2328
     classDef infra fill:#fff,stroke:#1f2328,color:#1f2328
 
-    AIClass["AI player<br/>(classroom)"]:::user
-    AIHomeMCP["AI player<br/>(home, Claude Desktop)"]:::user
-    AIHomeScript["AI player<br/>(home, custom script)"]:::user
+    AIHomeMCP["AI player<br/>(Claude Desktop)"]:::user
+    AIHomeScript["AI player<br/>(custom script)"]:::user
     Human["Human player"]:::user
     Observer["Observer"]:::user
     Admin["Round admin"]:::user
 
-    Harness["harness<br/>agent loop + panel"]:::comp
     MCP["cells-mcp<br/>MCP server"]:::comp
     Bots["game-bots<br/>scripted opponents"]:::comp
 
     Game["cells-game<br/>server + web client · spectator · follow · admin"]:::infra
 
-    AIClass --> Harness
     AIHomeMCP --> MCP
     AIHomeScript --> MCP
-    Harness --> MCP
     MCP --> Game
     Bots --> Game
 
@@ -98,13 +93,6 @@ is the single source of truth; AI and human players are indistinguishable to it.
 flowchart LR
     classDef comp fill:#f6f8fa,stroke:#57606a,color:#1f2328
     classDef shared fill:#eef3ff,stroke:#2f6feb,color:#1f2328
-    classDef ext fill:#fff,stroke:#1f2328,color:#1f2328,stroke-dasharray:4 2
-
-    subgraph Harness["harness"]
-        HBack["backend<br/>LLM loop · MCP client · WS server"]
-        HFront["panel UI<br/>inputs · event log · embedded player view"]
-    end
-    class HBack,HFront comp
 
     MCPSrv["cells-mcp<br/>MCP server"]:::comp
     Bots["game-bots<br/>scripted opponents"]:::comp
@@ -115,12 +103,6 @@ flowchart LR
     end
 
     Protocol["game-protocol<br/>shared Zod wire contract · v1.0"]:::shared
-    LiteLLM["LiteLLM gateway<br/>model gateway · spending cap · pre-shared classroom key"]:::ext
-
-    HBack -- MCP over HTTP --> MCPSrv
-    HBack -- OpenAI-compatible HTTP --> LiteLLM
-    HFront -- WebSocket --> HBack
-    HFront -. embeds .-> GViews
 
     MCPSrv -- Socket.IO as player --> GServer
     Bots -- Socket.IO as player --> GServer
@@ -137,20 +119,12 @@ Key relationships:
 
 - **`cells-game` is one repo, many surfaces.** The TypeScript server
   and every browser-side view it ships (player, spectator, follow-cam,
-  admin console, panel embed) build and deploy together.
+  admin console) build and deploy together.
 - **`game-protocol` is the shared wire contract.** The server,
   `cells-mcp` and `game-bots` all depend on the same package and
   agree on message shapes by construction, not by convention.
 - **AI and human players are indistinguishable to the game server.**
   Both are just Socket.IO clients with a name. `game-bots` lives in
   the same lane and provides deterministic opponents for comparison.
-- **The harness embeds a cells-game view**, not a bespoke renderer, so
-  what the student sees in their panel is exactly what any spectator
-  sees of their cell.
-- **LiteLLM sits off the game path.** It only exists to serve the
-  reference harness in a classroom (one pre-shared key, one spending
-  cap). Claude Desktop and custom scripts bring their own API
-  credentials.
 
-Each edge speaks a different protocol (Socket.IO, MCP over HTTP, an
-internal WebSocket, OpenAI-compatible HTTP).
+Each edge speaks a different protocol (Socket.IO, MCP over HTTP).
