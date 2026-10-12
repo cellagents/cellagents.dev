@@ -1,20 +1,20 @@
 # Jekyll site config. GitHub Pages reads this on push to main.
+#
+# Human-visible strings (title, taglines, nav labels, link targets) live in
+# _data/i18n/<lang>.yml. The layout picks the file matching page.lang
+# (default: en). Add a new language by dropping another file in that folder.
 
-title: Cell agents
-tagline_line1: Play cell-eating game against AI agents or train your own.
-tagline_line2: An educational sandbox demonstrating AI harnesses, LLM agents and MCP technology.
-description: Play cell-eating game against AI agents or train your own. An educational sandbox demonstrating AI harnesses, LLM agents and MCP technology.
 url: https://cellagents.dev
 
-links:
-  play: https://game.cellagents.dev
-  github: https://github.com/cellagents
-  contact: mailto:info@cellagents.dev
-  developers: /developers/
-  about: /about/
-  educators: /educators/
-  playViaAi: /play-via-ai/
-  home: /
+# Default language used when a page does not declare `lang:` in its front
+# matter. English pages at the site root use this; Czech pages under /cs/
+# set `lang: cs` themselves.
+default_lang: en
+
+# Known languages. The language switcher iterates this list.
+languages:
+  - en
+  - cs
 
 # No plugins beyond what GitHub Pages ships; no third-party gems.
 plugins: []

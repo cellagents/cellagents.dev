@@ -182,6 +182,44 @@ a:focus-visible {
     text-decoration: none;
 }
 
+.lang-switcher {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    margin-left: 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 1px solid var(--muted);
+    font-size: 0.9rem;
+}
+
+.lang-switcher a {
+    color: var(--muted);
+}
+
+.lang-switcher a:hover,
+.lang-switcher a:focus-visible {
+    color: var(--fg);
+    text-decoration: none;
+}
+
+.lang-switcher-current {
+    color: var(--fg);
+    font-weight: 600;
+}
+
+.lang-switcher-hero {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.lang-switcher-hero .lang-switcher-current {
+    color: var(--muted);
+    font-weight: 400;
+}
+
 .page {
     flex: 1;
     padding: 2rem 1.25rem 3rem;

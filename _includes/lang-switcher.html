@@ -1,0 +1,33 @@
+{%- comment -%}
+  Language switcher. Renders one link per language known to the site
+  (site.languages), skipping the active language. For other languages:
+
+    - If the current page declares a translation under page.translations.<lang>,
+      link straight to that URL.
+    - Otherwise link to the language's home page, so the visitor still
+      lands somewhere coherent even when a page exists in only one language.
+
+  Pass `variant="hero"` to get the hero styling; the default renders as a
+  compact header switcher.
+{%- endcomment -%}
+{%- assign current = include.lang -%}
+{%- assign variant = include.variant | default: "header" -%}
+{%- if variant == "hero" -%}
+  <nav class="lang-switcher lang-switcher-hero" aria-label="{{ include.strings.ui.language_switcher_label }}">
+{%- else -%}
+  <div class="lang-switcher" aria-label="{{ include.strings.ui.language_switcher_label }}">
+{%- endif -%}
+{%- for code in site.languages -%}
+  {%- assign other = site.data.i18n[code] -%}
+  {%- if code == current -%}
+    <span class="lang-switcher-current" aria-current="true" lang="{{ code }}">{{ other.language_name }}</span>
+  {%- else -%}
+    {%- assign target = page.translations[code] | default: other.links.home -%}
+    <a href="{{ target | relative_url }}" hreflang="{{ code }}" lang="{{ code }}">{{ other.language_name }}</a>
+  {%- endif -%}
+{%- endfor -%}
+{%- if variant == "hero" -%}
+  </nav>
+{%- else -%}
+  </div>
+{%- endif -%}

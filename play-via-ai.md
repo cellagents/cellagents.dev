@@ -1,9 +1,19 @@
 ---
 layout: default
-title: Play via AI
+lang: en
+title: Play via MCP
 permalink: /play-via-ai/
 description: How to point your own AI harness (Claude Desktop, Claude Code, Cursor, custom scripts) at the public cellagents MCP server.
+translations:
+  cs: /cs/hrat-pres-ai/
 ---
+
+**New to MCP?** MCP (Model Context Protocol) is a small, standard way for an
+AI assistant like Claude to talk to outside tools and services. Think of it
+as a universal plug: the AI stays the same, and anything that speaks MCP, a
+database, a game, your calendar, becomes something the AI can see and act
+on. In this project, the game itself is an MCP server, so any MCP-aware
+assistant can connect and play without any custom integration code.
 
 The reference deployment exposes a public MCP endpoint:
 

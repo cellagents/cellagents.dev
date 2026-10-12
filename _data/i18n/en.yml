@@ -1,0 +1,65 @@
+# English strings and navigation. One file per language under _data/i18n/.
+# The layout picks the file matching page.lang (default: en).
+
+title: Cell agents
+tagline_line1: Play cell-eating game against AI agents or train your own.
+tagline_line2: An educational sandbox demonstrating AI harnesses, LLM agents and MCP technology.
+description: Play cell-eating game against AI agents or train your own. An educational sandbox demonstrating AI harnesses, LLM agents and MCP technology.
+
+# Human-readable language name, used in the language switcher.
+language_name: English
+
+# Primary links. External URLs are language-neutral; internal URLs are localized.
+links:
+  play: https://game.cellagents.dev
+  github: https://github.com/cellagents
+  contact: mailto:info@cellagents.dev
+  home: /
+  about: /about/
+  developers: /developers/
+  educators: /educators/
+  playViaAi: /play-via-ai/
+
+# Header navigation (shown on sub-pages).
+nav_primary:
+  - label: Play
+    href_key: play
+  - label: Play via MCP
+    href_key: playViaAi
+  - label: About
+    href_key: about
+
+# Hero primary actions (shown on the home page).
+hero_actions:
+  - label: Play
+    href_key: play
+  - label: Play via MCP
+    href_key: playViaAi
+  - label: About
+    href_key: about
+
+# Hero secondary actions.
+hero_actions_secondary:
+  - label: For developers
+    href_key: developers
+  - label: For educators
+    href_key: educators
+  - label: GitHub
+    href_key: github
+
+# Footer links.
+footer:
+  - label: Home
+    href_key: home
+  - label: About
+    href_key: about
+  - label: For developers
+    href_key: developers
+  - label: For educators
+    href_key: educators
+  - label: GitHub
+    href_key: github
+
+# UI labels.
+ui:
+  language_switcher_label: Language

@@ -1,0 +1,58 @@
+# Czech strings and navigation. Mirror of en.yml, translated independently.
+# Internal links are prefixed with /cs/; external links are shared.
+
+title: Cell agents
+tagline_line1: Hrajte hru o pojídání buněk proti AI agentům nebo si vycvičte vlastního.
+tagline_line2: Vzdělávací pískoviště, které ukazuje AI harnessy, LLM agenty a technologii MCP.
+description: Hrajte hru o pojídání buněk proti AI agentům nebo si vycvičte vlastního. Vzdělávací pískoviště, které ukazuje AI harnessy, LLM agenty a technologii MCP.
+
+language_name: Čeština
+
+links:
+  play: https://game.cellagents.dev
+  github: https://github.com/cellagents
+  contact: mailto:info@cellagents.dev
+  home: /cs/
+  about: /cs/o-projektu/
+  developers: /cs/pro-vyvojare/
+  educators: /cs/pro-ucitele/
+  playViaAi: /cs/hrat-pres-ai/
+
+nav_primary:
+  - label: Hrát
+    href_key: play
+  - label: Hrát přes MCP
+    href_key: playViaAi
+  - label: O projektu
+    href_key: about
+
+hero_actions:
+  - label: Hrát
+    href_key: play
+  - label: Hrát přes MCP
+    href_key: playViaAi
+  - label: O projektu
+    href_key: about
+
+hero_actions_secondary:
+  - label: Pro vývojáře
+    href_key: developers
+  - label: Pro učitele
+    href_key: educators
+  - label: GitHub
+    href_key: github
+
+footer:
+  - label: Domů
+    href_key: home
+  - label: O projektu
+    href_key: about
+  - label: Pro vývojáře
+    href_key: developers
+  - label: Pro učitele
+    href_key: educators
+  - label: GitHub
+    href_key: github
+
+ui:
+  language_switcher_label: Jazyk
